@@ -1,7 +1,7 @@
 ﻿
 namespace SpatialGamesProj
 {
-    partial class Form1
+    partial class UserInterface
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace SpatialGamesProj
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnInit = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.Strategies = new System.Windows.Forms.ListBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -44,17 +44,19 @@ namespace SpatialGamesProj
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblInit = new System.Windows.Forms.Label();
+            this.txtTest = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button4
+            // btnInit
             // 
-            this.button4.Location = new System.Drawing.Point(633, 364);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Initialise";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnInit.Location = new System.Drawing.Point(633, 364);
+            this.btnInit.Name = "btnInit";
+            this.btnInit.Size = new System.Drawing.Size(75, 23);
+            this.btnInit.TabIndex = 6;
+            this.btnInit.Text = "Initialise";
+            this.btnInit.UseVisualStyleBackColor = true;
+            this.btnInit.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox4
             // 
@@ -183,13 +185,31 @@ namespace SpatialGamesProj
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 15);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Grid DImensions";
+            this.label4.Text = "Grid Dimensions";
             // 
-            // Form1
+            // lblInit
+            // 
+            this.lblInit.AutoSize = true;
+            this.lblInit.Location = new System.Drawing.Point(495, 368);
+            this.lblInit.Name = "lblInit";
+            this.lblInit.Size = new System.Drawing.Size(38, 15);
+            this.lblInit.TabIndex = 22;
+            this.lblInit.Text = "label5";
+            // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(621, 335);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(100, 23);
+            this.txtTest.TabIndex = 23;
+            // 
+            // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTest);
+            this.Controls.Add(this.lblInit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -204,8 +224,8 @@ namespace SpatialGamesProj
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.Strategies);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button4);
-            this.Name = "Form1";
+            this.Controls.Add(this.btnInit);
+            this.Name = "UserInterface";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -214,7 +234,7 @@ namespace SpatialGamesProj
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnInit;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ListBox Strategies;
         private System.Windows.Forms.TextBox textBox5;
@@ -229,6 +249,8 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblInit;
+        private System.Windows.Forms.TextBox txtTest;
     }
 }
 

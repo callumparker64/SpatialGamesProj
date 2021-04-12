@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SpatialGamesProj
 {
-    public partial class Form1 : Form
+    public partial class UserInterface : Form
     {
-        public Form1()
+        public UserInterface()
         {
             InitializeComponent();
         }
@@ -34,7 +34,9 @@ namespace SpatialGamesProj
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            lblInit.Text = "Initialised";
+            SpatialGame f2 = new SpatialGame(txtTest.Text);
+            f2.ShowDialog();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,6 +50,11 @@ namespace SpatialGamesProj
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
         {
 
         }

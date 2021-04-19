@@ -34,8 +34,28 @@ namespace SpatialGamesProj
 
         private void button4_Click(object sender, EventArgs e)
         {
+            String radioStrategy = "";
+
+            if(radioScatter.Checked == true)
+            {
+                radioStrategy = "Scatter";
+            }
+            else if(radioBlock.Checked == true)
+            {
+                radioStrategy = "Block";
+            }
+            else if (radioRows.Checked == true)
+            {
+                radioStrategy = "Rows";
+            }
+            else if (radioRandom.Checked == true)
+            {
+                radioStrategy = "Random";
+            }
+
+
             lblInit.Text = "Initialised";
-            SpatialGame f2 = new SpatialGame(txtTest.Text);
+            SpatialGame f2 = new SpatialGame(txtTest.Text,Int32.Parse(txtGrid.Text), Int32.Parse(txtCoop.Text), Int32.Parse(txtDefect.Text), Int32.Parse(txtTitForTat.Text),radioStrategy);
             f2.ShowDialog();
         }
 

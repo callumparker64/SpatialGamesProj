@@ -30,16 +30,16 @@ namespace SpatialGamesProj
         private void InitializeComponent()
         {
             this.btnInit = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtGrid = new System.Windows.Forms.TextBox();
             this.Strategies = new System.Windows.Forms.ListBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCoop = new System.Windows.Forms.TextBox();
+            this.txtDefect = new System.Windows.Forms.TextBox();
+            this.txtTitForTat = new System.Windows.Forms.TextBox();
             this.StrategyArrangements = new System.Windows.Forms.ListBox();
-            this.Scatter = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioScatter = new System.Windows.Forms.RadioButton();
+            this.radioBlock = new System.Windows.Forms.RadioButton();
+            this.radioRows = new System.Windows.Forms.RadioButton();
+            this.radioRandom = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,12 +58,12 @@ namespace SpatialGamesProj
             this.btnInit.UseVisualStyleBackColor = true;
             this.btnInit.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox4
+            // txtGrid
             // 
-            this.textBox4.Location = new System.Drawing.Point(119, 48);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 7;
+            this.txtGrid.Location = new System.Drawing.Point(119, 48);
+            this.txtGrid.Name = "txtGrid";
+            this.txtGrid.Size = new System.Drawing.Size(100, 23);
+            this.txtGrid.TabIndex = 7;
             // 
             // Strategies
             // 
@@ -75,26 +75,26 @@ namespace SpatialGamesProj
             this.Strategies.TabIndex = 8;
             this.Strategies.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // textBox5
+            // txtCoop
             // 
-            this.textBox5.Location = new System.Drawing.Point(119, 204);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 23);
-            this.textBox5.TabIndex = 9;
+            this.txtCoop.Location = new System.Drawing.Point(119, 204);
+            this.txtCoop.Name = "txtCoop";
+            this.txtCoop.Size = new System.Drawing.Size(100, 23);
+            this.txtCoop.TabIndex = 9;
             // 
-            // textBox2
+            // txtDefect
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 233);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 10;
+            this.txtDefect.Location = new System.Drawing.Point(119, 233);
+            this.txtDefect.Name = "txtDefect";
+            this.txtDefect.Size = new System.Drawing.Size(100, 23);
+            this.txtDefect.TabIndex = 10;
             // 
-            // textBox3
+            // txtTitForTat
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 265);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 11;
+            this.txtTitForTat.Location = new System.Drawing.Point(119, 265);
+            this.txtTitForTat.Name = "txtTitForTat";
+            this.txtTitForTat.Size = new System.Drawing.Size(100, 23);
+            this.txtTitForTat.TabIndex = 11;
             // 
             // StrategyArrangements
             // 
@@ -106,49 +106,49 @@ namespace SpatialGamesProj
             this.StrategyArrangements.TabIndex = 13;
             this.StrategyArrangements.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
-            // Scatter
+            // radioScatter
             // 
-            this.Scatter.AutoSize = true;
-            this.Scatter.Location = new System.Drawing.Point(369, 70);
-            this.Scatter.Name = "Scatter";
-            this.Scatter.Size = new System.Drawing.Size(61, 19);
-            this.Scatter.TabIndex = 14;
-            this.Scatter.TabStop = true;
-            this.Scatter.Text = "Scatter";
-            this.Scatter.UseVisualStyleBackColor = true;
+            this.radioScatter.AutoSize = true;
+            this.radioScatter.Location = new System.Drawing.Point(369, 70);
+            this.radioScatter.Name = "radioScatter";
+            this.radioScatter.Size = new System.Drawing.Size(61, 19);
+            this.radioScatter.TabIndex = 14;
+            this.radioScatter.TabStop = true;
+            this.radioScatter.Text = "Scatter";
+            this.radioScatter.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioBlock
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(369, 95);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(54, 19);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Block";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioBlock.AutoSize = true;
+            this.radioBlock.Location = new System.Drawing.Point(369, 95);
+            this.radioBlock.Name = "radioBlock";
+            this.radioBlock.Size = new System.Drawing.Size(54, 19);
+            this.radioBlock.TabIndex = 15;
+            this.radioBlock.TabStop = true;
+            this.radioBlock.Text = "Block";
+            this.radioBlock.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioRows
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(369, 120);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(53, 19);
-            this.radioButton3.TabIndex = 16;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Rows";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioRows.AutoSize = true;
+            this.radioRows.Location = new System.Drawing.Point(369, 120);
+            this.radioRows.Name = "radioRows";
+            this.radioRows.Size = new System.Drawing.Size(53, 19);
+            this.radioRows.TabIndex = 16;
+            this.radioRows.TabStop = true;
+            this.radioRows.Text = "Rows";
+            this.radioRows.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioRandom
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(369, 145);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 19);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Random";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioRandom.AutoSize = true;
+            this.radioRandom.Location = new System.Drawing.Point(369, 145);
+            this.radioRandom.Name = "radioRandom";
+            this.radioRandom.Size = new System.Drawing.Size(70, 19);
+            this.radioRandom.TabIndex = 17;
+            this.radioRandom.TabStop = true;
+            this.radioRandom.Text = "Random";
+            this.radioRandom.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -214,16 +214,16 @@ namespace SpatialGamesProj
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.Scatter);
+            this.Controls.Add(this.radioRandom);
+            this.Controls.Add(this.radioRows);
+            this.Controls.Add(this.radioBlock);
+            this.Controls.Add(this.radioScatter);
             this.Controls.Add(this.StrategyArrangements);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtTitForTat);
+            this.Controls.Add(this.txtDefect);
+            this.Controls.Add(this.txtCoop);
             this.Controls.Add(this.Strategies);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtGrid);
             this.Controls.Add(this.btnInit);
             this.Name = "UserInterface";
             this.Text = "Form1";
@@ -235,16 +235,16 @@ namespace SpatialGamesProj
 
         #endregion
         private System.Windows.Forms.Button btnInit;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtGrid;
         private System.Windows.Forms.ListBox Strategies;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCoop;
+        private System.Windows.Forms.TextBox txtDefect;
+        private System.Windows.Forms.TextBox txtTitForTat;
         private System.Windows.Forms.ListBox StrategyArrangements;
-        private System.Windows.Forms.RadioButton Scatter;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioScatter;
+        private System.Windows.Forms.RadioButton radioBlock;
+        private System.Windows.Forms.RadioButton radioRows;
+        private System.Windows.Forms.RadioButton radioRandom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

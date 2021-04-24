@@ -64,6 +64,7 @@ namespace SpatialGamesProj
             this.txtGrid.Name = "txtGrid";
             this.txtGrid.Size = new System.Drawing.Size(100, 23);
             this.txtGrid.TabIndex = 7;
+            this.txtGrid.TextChanged += new System.EventHandler(this.txtGrid_TextChanged);
             // 
             // Strategies
             // 
@@ -226,7 +227,7 @@ namespace SpatialGamesProj
             this.Controls.Add(this.txtGrid);
             this.Controls.Add(this.btnInit);
             this.Name = "UserInterface";
-            this.Text = "Form1";
+            this.Text = "UI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

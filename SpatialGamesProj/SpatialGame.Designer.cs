@@ -126,7 +126,7 @@ namespace SpatialGamesProj
             this.Controls.Add(this.btnGraph);
             this.Controls.Add(this.lblTest2);
             this.Name = "SpatialGame";
-            this.Text = "Form2";
+            this.Text = "Spatial Game";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

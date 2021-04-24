@@ -12,10 +12,16 @@ namespace SpatialGamesProj
 {
     public partial class UserInterface : Form
     {
+
         public UserInterface()
         {
             InitializeComponent();
         }
+        public static bool isNumeric(string s)
+        {
+            return int.TryParse(s, out int n);
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -53,10 +59,12 @@ namespace SpatialGamesProj
                 radioStrategy = "Random";
             }
 
-
-            lblInit.Text = "Initialised";
-            SpatialGame f2 = new SpatialGame(txtTest.Text,Int32.Parse(txtGrid.Text), Int32.Parse(txtCoop.Text), Int32.Parse(txtDefect.Text), Int32.Parse(txtTitForTat.Text),radioStrategy);
-            f2.ShowDialog();
+            if (Int32.Parse(txtGrid.Text) < 10 & isNumeric(txtGrid.Text) & isNumeric(txtCoop.Text) & isNumeric(txtDefect.Text) & isNumeric(txtTitForTat.Text) )
+            {
+                lblInit.Text = "Initialised";
+                SpatialGame f2 = new SpatialGame(txtTest.Text, Int32.Parse(txtGrid.Text), Int32.Parse(txtCoop.Text), Int32.Parse(txtDefect.Text), Int32.Parse(txtTitForTat.Text), radioStrategy);
+                f2.ShowDialog();
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,6 +83,11 @@ namespace SpatialGamesProj
         }
 
         private void btnTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGrid_TextChanged(object sender, EventArgs e)
         {
 
         }

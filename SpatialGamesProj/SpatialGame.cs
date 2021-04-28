@@ -10,28 +10,36 @@ namespace SpatialGamesProj
 {
     public partial class SpatialGame : Form
     {
+        public int gridSize { get; set; }
+        public int coopNo { get; set; }
+        public int defNo { get; set; }
+        public int titfortatNo { get; set; }
 
-        public SpatialGame(string testStr,int noPlayers,int coopNo,int defNo,int titfortatNo,String stratArrange)
+        public SpatialGame(string testStr,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
         {
            
             InitializeComponent();
 
             lblTest2.Text = testStr;
-            lblGrid.Text = noPlayers.ToString();
+            lblGrid.Text = gridSize.ToString();
             lblCoop.Text = coopNo.ToString();
             lblDefect.Text = defNo.ToString();
             lblTitForTat.Text = titfortatNo.ToString();
             lblArrange.Text = stratArrange;
 
+            this.gridSize = gridSize;
+            this.coopNo = coopNo;
+            this.defNo = defNo;
+            this.titfortatNo = titfortatNo;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
             int num = 0;
-            for(int i = 0;i<9;i++)
+            for(int i = 0;i<gridSize;i++)
             {
-                for(int j = 0;j<9;j++)
+                for(int j = 0;j<gridSize;j++)
                 {
                     Label l = addLabel(num);
                     flowLayoutPanel1.Controls.Add(l);
@@ -39,6 +47,18 @@ namespace SpatialGamesProj
                 }
  
             }
+
+            //for (int i = 0; i < 9; i++)
+            //{
+             //   for (int j = 0; j < 9; j++)
+              //  {
+              //      Label l = addLabel(num);
+             //       flowLayoutPanel1.Controls.Add(l);
+             //       num = num + 1;
+             //   }
+            //
+            //}
+
 
         }
 

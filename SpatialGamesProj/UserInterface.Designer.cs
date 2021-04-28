@@ -30,7 +30,7 @@ namespace SpatialGamesProj
         private void InitializeComponent()
         {
             this.btnInit = new System.Windows.Forms.Button();
-            this.txtGrid = new System.Windows.Forms.TextBox();
+            this.txtPlayers = new System.Windows.Forms.TextBox();
             this.Strategies = new System.Windows.Forms.ListBox();
             this.txtCoop = new System.Windows.Forms.TextBox();
             this.txtDefect = new System.Windows.Forms.TextBox();
@@ -58,13 +58,13 @@ namespace SpatialGamesProj
             this.btnInit.UseVisualStyleBackColor = true;
             this.btnInit.Click += new System.EventHandler(this.button4_Click);
             // 
-            // txtGrid
+            // txtPlayers
             // 
-            this.txtGrid.Location = new System.Drawing.Point(119, 48);
-            this.txtGrid.Name = "txtGrid";
-            this.txtGrid.Size = new System.Drawing.Size(100, 23);
-            this.txtGrid.TabIndex = 7;
-            this.txtGrid.TextChanged += new System.EventHandler(this.txtGrid_TextChanged);
+            this.txtPlayers.Location = new System.Drawing.Point(119, 48);
+            this.txtPlayers.Name = "txtPlayers";
+            this.txtPlayers.Size = new System.Drawing.Size(100, 23);
+            this.txtPlayers.TabIndex = 7;
+            this.txtPlayers.TextChanged += new System.EventHandler(this.txtGrid_TextChanged);
             // 
             // Strategies
             // 
@@ -182,11 +182,11 @@ namespace SpatialGamesProj
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 51);
+            this.label4.Location = new System.Drawing.Point(34, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 15);
+            this.label4.Size = new System.Drawing.Size(60, 15);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Grid Dimensions";
+            this.label4.Text = "NoPlayers";
             // 
             // lblInit
             // 
@@ -224,7 +224,7 @@ namespace SpatialGamesProj
             this.Controls.Add(this.txtDefect);
             this.Controls.Add(this.txtCoop);
             this.Controls.Add(this.Strategies);
-            this.Controls.Add(this.txtGrid);
+            this.Controls.Add(this.txtPlayers);
             this.Controls.Add(this.btnInit);
             this.Name = "UserInterface";
             this.Text = "UI";
@@ -236,7 +236,7 @@ namespace SpatialGamesProj
 
         #endregion
         private System.Windows.Forms.Button btnInit;
-        private System.Windows.Forms.TextBox txtGrid;
+        private System.Windows.Forms.TextBox txtPlayers;
         private System.Windows.Forms.ListBox Strategies;
         private System.Windows.Forms.TextBox txtCoop;
         private System.Windows.Forms.TextBox txtDefect;

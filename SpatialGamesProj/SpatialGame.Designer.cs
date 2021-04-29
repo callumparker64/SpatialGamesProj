@@ -37,7 +37,6 @@ namespace SpatialGamesProj
             this.lblDefect = new System.Windows.Forms.Label();
             this.lblTitForTat = new System.Windows.Forms.Label();
             this.lblArrange = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // lblTest2
@@ -113,20 +112,11 @@ namespace SpatialGamesProj
             this.lblArrange.TabIndex = 7;
             this.lblArrange.Text = "label1";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(695, 404);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
             // SpatialGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblArrange);
             this.Controls.Add(this.lblTitForTat);
             this.Controls.Add(this.lblDefect);
@@ -155,6 +145,5 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Label lblTitForTat;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblArrange;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

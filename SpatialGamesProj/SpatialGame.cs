@@ -35,17 +35,20 @@ namespace SpatialGamesProj
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            int xPos = 40;
+            int yPos = 40;
             int num = 0;
             for(int i = 0;i<gridSize;i++)
             {
                 for(int j = 0;j<gridSize;j++)
                 {
-                    Label l = addLabel(num);
-                    flowLayoutPanel1.Controls.Add(l);
+                    Label l = addLabel(num,xPos,yPos);
+                    this.Controls.Add(l);
                     num = num + 1;
+                    yPos = yPos + 40;
                 }
- 
+                yPos = 40;
+                xPos = xPos + 100;
             }
 
             //for (int i = 0; i < 9; i++)
@@ -62,12 +65,13 @@ namespace SpatialGamesProj
 
         }
 
-        Label addLabel(int i )
+        Label addLabel(int i ,int x,int y)
         {
             Label l = new Label();
             l.Name = "lbl"+i.ToString();
             l.Text = "Player"+i.ToString();
             l.Margin = new Padding(3);
+            l.Location = new Point(x, y);
             return l;
 
         }

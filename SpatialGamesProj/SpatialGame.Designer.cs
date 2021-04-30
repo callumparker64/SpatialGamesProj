@@ -37,6 +37,7 @@ namespace SpatialGamesProj
             this.lblDefect = new System.Windows.Forms.Label();
             this.lblTitForTat = new System.Windows.Forms.Label();
             this.lblArrange = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTest2
@@ -112,11 +113,22 @@ namespace SpatialGamesProj
             this.lblArrange.TabIndex = 7;
             this.lblArrange.Text = "label1";
             // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(713, 386);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 8;
+            this.btnStart.Text = "Start Game";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
             // SpatialGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblArrange);
             this.Controls.Add(this.lblTitForTat);
             this.Controls.Add(this.lblDefect);
@@ -145,5 +157,6 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Label lblTitForTat;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblArrange;
+        private System.Windows.Forms.Button btnStart;
     }
 }

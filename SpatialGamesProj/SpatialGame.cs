@@ -14,6 +14,8 @@ namespace SpatialGamesProj
         public int coopNo { get; set; }
         public int defNo { get; set; }
         public int titfortatNo { get; set; }
+        public String stratArrange { get; }
+        int rounds = 0;
 
         public SpatialGame(string testStr,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
         {
@@ -31,18 +33,44 @@ namespace SpatialGamesProj
             this.coopNo = coopNo;
             this.defNo = defNo;
             this.titfortatNo = titfortatNo;
+            this.stratArrange = stratArrange;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             int xPos = 40;
             int yPos = 40;
+
+            //Could use a array of string that can be generated and looped through to determine strategy arrangements
+            String playerStrat = "";
+
             int num = 0;
-            for(int i = 0;i<gridSize;i++)
+
+
+            //Selection to generate strategy array with different settings
+            if (stratArrange.Equals("Scatter"))
+            {
+
+            }
+            else if (stratArrange.Equals("Block"))
+            {
+
+            }
+            else if (stratArrange.Equals("Rows"))
+            {
+
+            }
+            else if (stratArrange.Equals("Random"))
+            {
+
+            }
+
+
+            for (int i = 0;i<gridSize;i++)
             {
                 for(int j = 0;j<gridSize;j++)
                 {
-                    Label l = addLabel(num,xPos,yPos);
+                    Label l = addPlayer(num,xPos,yPos,playerStrat);
                     this.Controls.Add(l);
                     num = num + 1;
                     yPos = yPos + 40;
@@ -55,7 +83,7 @@ namespace SpatialGamesProj
             //{
              //   for (int j = 0; j < 9; j++)
               //  {
-              //      Label l = addLabel(num);
+              //      Label l = addPlayer(num);
              //       flowLayoutPanel1.Controls.Add(l);
              //       num = num + 1;
              //   }
@@ -63,12 +91,14 @@ namespace SpatialGamesProj
             //}
 
 
+
         }
 
-        Label addLabel(int i ,int x,int y)
+        Label addPlayer(int i ,int x,int y,String playerStrategy)
         {
+            //PlayerStrategy is used to is a case/if to decide which class to call when generating a player object
             Label l = new Label();
-            l.Name = "lbl"+i.ToString();
+            l.Name = "lblPlayer"+i.ToString();
             l.Text = "Player"+i.ToString();
             l.Margin = new Padding(3);
             l.Location = new Point(x, y);
@@ -126,6 +156,12 @@ namespace SpatialGamesProj
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            rounds = rounds + 1;
+            lblRounds.Text = "Round: " +(rounds).ToString();
         }
     }
 }

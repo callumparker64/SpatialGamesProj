@@ -16,6 +16,7 @@ namespace SpatialGamesProj
         public int titfortatNo { get; set; }
         public String stratArrange { get; }
         int rounds = 0;
+        List<String> playerStrategies = new List<String>();
 
         public SpatialGame(string testStr,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
         {
@@ -41,8 +42,6 @@ namespace SpatialGamesProj
             int xPos = 40;
             int yPos = 40;
 
-            //Could use a array of string that can be generated and looped through to determine strategy arrangements
-            String playerStrat = "";
 
             int num = 0;
 
@@ -50,27 +49,91 @@ namespace SpatialGamesProj
             //Selection to generate strategy array with different settings
             if (stratArrange.Equals("Scatter"))
             {
+                for (int i = 0; i < (coopNo + defNo + titfortatNo); i++)
+                {
+                    if (i < coopNo)
+                    {
+                        playerStrategies.Add("C");
+                    }
+                    else if (i - coopNo < defNo)
+                    {
+                        playerStrategies.Add("D");
+                    }
+                    else if (i - (coopNo + defNo) < titfortatNo)
+                    {
+                        playerStrategies.Add("T");
+                    }
 
+                }
             }
             else if (stratArrange.Equals("Block"))
             {
+                for (int i = 0; i < (coopNo + defNo + titfortatNo); i++)
+                {
+                    if(i < coopNo)
+                    {
+                         playerStrategies.Add("C");
+                    }
+                    else if(i - coopNo < defNo)
+                    {
+                         playerStrategies.Add("D");
+                    }
+                    else if(i - (coopNo + defNo) < titfortatNo)
+                    {
+                         playerStrategies.Add("T");
+                    }
+
+                }
 
             }
             else if (stratArrange.Equals("Rows"))
             {
+                for (int i = 0; i < (coopNo + defNo + titfortatNo); i++)
+                {
+                    if (i < coopNo)
+                    {
+                        playerStrategies.Add("C");
+                    }
+                    else if (i - coopNo < defNo)
+                    {
+                        playerStrategies.Add("D");
+                    }
+                    else if (i - (coopNo + defNo) < titfortatNo)
+                    {
+                        playerStrategies.Add("T");
+                    }
 
+                }
             }
             else if (stratArrange.Equals("Random"))
             {
+                for (int i = 0; i < (coopNo + defNo + titfortatNo); i++)
+                {
+                    if (i < coopNo)
+                    {
+                        playerStrategies.Add("C");
+                    }
+                    else if (i - coopNo < defNo)
+                    {
+                        playerStrategies.Add("D");
+                    }
+                    else if (i - (coopNo + defNo) < titfortatNo)
+                    {
+                        playerStrategies.Add("T");
+                    }
 
+                }
             }
 
+
+            string combindedString = string.Join(",", playerStrategies.ToArray());
+            MessageBox.Show(combindedString, "Test");
 
             for (int i = 0;i<gridSize;i++)
             {
                 for(int j = 0;j<gridSize;j++)
                 {
-                    Label l = addPlayer(num,xPos,yPos,playerStrat);
+                    Label l = addPlayer(num,xPos,yPos, playerStrategies[num]);
                     this.Controls.Add(l);
                     num = num + 1;
                     yPos = yPos + 40;
@@ -94,15 +157,45 @@ namespace SpatialGamesProj
 
         }
 
-        Label addPlayer(int i ,int x,int y,String playerStrategy)
+        Label addPlayer(int i, int x, int y, String playerStrategy)
         {
             //PlayerStrategy is used to is a case/if to decide which class to call when generating a player object
-            Label l = new Label();
-            l.Name = "lblPlayer"+i.ToString();
-            l.Text = "Player"+i.ToString();
-            l.Margin = new Padding(3);
-            l.Location = new Point(x, y);
-            return l;
+            if (playerStrategy.Equals("C"))
+            {
+                Label l = new Label();
+                l.Name = "lblCoop" + i.ToString();
+                l.Text = "Coop" + i.ToString();
+                l.Margin = new Padding(3);
+                l.Location = new Point(x, y);
+                return l;
+            }
+            else if (playerStrategy.Equals("D"))
+            {
+                Label l = new Label();
+                l.Name = "lblDefect" + i.ToString();
+                l.Text = "Defect" + i.ToString();
+                l.Margin = new Padding(3);
+                l.Location = new Point(x, y);
+                return l;
+            }
+            else if (playerStrategy.Equals("T"))
+            {
+                Label l = new Label();
+                l.Name = "lblTitforTat" + i.ToString();
+                l.Text = "TitforTat" + i.ToString();
+                l.Margin = new Padding(3);
+                l.Location = new Point(x, y);
+                return l;
+            }
+            else
+            {
+                Label l = new Label();
+                l.Name = "lblPlayer" + i.ToString();
+                l.Text = "Player" + i.ToString();
+                l.Margin = new Padding(3);
+                l.Location = new Point(x, y);
+                return l;
+            }
 
         }
             

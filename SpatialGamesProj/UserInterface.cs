@@ -59,11 +59,19 @@ namespace SpatialGamesProj
                 radioStrategy = "Random";
             }
 
-            if (Int32.Parse(txtGrid.Text) <= 100 & isNumeric(txtGrid.Text) & isNumeric(txtCoop.Text) & isNumeric(txtDefect.Text) & isNumeric(txtTitForTat.Text) )
+            if (Int32.Parse(txtGrid.Text) <= 100 & isNumeric(txtGrid.Text) & isNumeric(txtCoop.Text) & isNumeric(txtDefect.Text) & isNumeric(txtTitForTat.Text))
             {
-                lblInit.Text = "Initialised";
-                SpatialGame f2 = new SpatialGame(txtTest.Text, Int32.Parse(txtGrid.Text), Int32.Parse(txtCoop.Text), Int32.Parse(txtDefect.Text), Int32.Parse(txtTitForTat.Text), radioStrategy);
-                f2.ShowDialog();
+                if((Int32.Parse(txtCoop.Text) + Int32.Parse(txtDefect.Text) + Int32.Parse(txtTitForTat.Text)) == Int32.Parse(txtGrid.Text) * Int32.Parse(txtGrid.Text))
+                {
+                    lblInit.Text = "Initialised";
+                    SpatialGame f2 = new SpatialGame(txtTest.Text, Int32.Parse(txtGrid.Text), Int32.Parse(txtCoop.Text), Int32.Parse(txtDefect.Text), Int32.Parse(txtTitForTat.Text), radioStrategy);
+                    f2.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Please check that your number of player strategies is compatable with the grid size inputted, for example a grid size of " + txtGrid.Text + " will be able to support " + Int32.Parse(txtGrid.Text) * Int32.Parse(txtGrid.Text) + " strategies.", "Alert");
+                }
+
             }
         }
 

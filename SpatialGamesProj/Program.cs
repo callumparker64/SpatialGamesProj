@@ -16,7 +16,7 @@ namespace SpatialGamesProj
         static void Main()
         {
             Test test = new Test();
-            Split split = new Split(2, 2, 0);
+            Cooperator split = new Cooperator(2, 2, 0);
 
             Console.WriteLine("Hello World");
             Console.WriteLine(test.getValue());

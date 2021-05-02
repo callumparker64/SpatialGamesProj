@@ -19,6 +19,7 @@ namespace SpatialGamesProj
         public String stratArrange { get; }
         int rounds = 0;
         List<String> playerStrategies = new List<String>();
+        List<Player> playerList = new List<Player>();
 
         public SpatialGame(int gameLen,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
         {
@@ -154,7 +155,7 @@ namespace SpatialGamesProj
             //PlayerStrategy is used to is a case/if to decide which class to call when generating a player object
             if (playerStrategy.Equals("C"))
             {
-                Cooperator c = new Cooperator(xPos, yPos, 0); //Player strategies must be collected into a list of strategies that can be looped through for the main method
+                playerList.Add(new Player("C", xPos, yPos, 0));
                 Label l = new Label();
                 l.Name = "lblCoop" + i.ToString();
                 l.Text = "Coop" + i.ToString();
@@ -164,7 +165,7 @@ namespace SpatialGamesProj
             }
             else if (playerStrategy.Equals("D"))
             {
-                Defector d = new Defector(xPos, yPos, 0);
+                playerList.Add(new Player("D", xPos, yPos, 0));
                 Label l = new Label();
                 l.Name = "lblDefect" + i.ToString();
                 l.Text = "Defect" + i.ToString();
@@ -174,7 +175,7 @@ namespace SpatialGamesProj
             }
             else if (playerStrategy.Equals("T"))
             {
-                TitForTat t = new TitForTat(xPos, yPos, 0);
+                playerList.Add(new Player("T", xPos, yPos, 0));
                 Label l = new Label();
                 l.Name = "lblTitforTat" + i.ToString();
                 l.Text = "TitforTat" + i.ToString();
@@ -214,7 +215,8 @@ namespace SpatialGamesProj
 
         private void timer1_Tick(object Sender, EventArgs e)
         {
-
+            playerList.ForEach(Player => Player.Score = Player.Score + 1);
+            lbltestScore.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
             for (int i = 0; i < gridSize; i++)
             {
                 for (int j = 0; j < gridSize; j++)

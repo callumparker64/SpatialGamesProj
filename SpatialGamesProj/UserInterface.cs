@@ -64,7 +64,7 @@ namespace SpatialGamesProj
                 if((Int32.Parse(txtCoop.Text) + Int32.Parse(txtDefect.Text) + Int32.Parse(txtTitForTat.Text)) == Int32.Parse(txtGrid.Text) * Int32.Parse(txtGrid.Text))
                 {
                     lblInit.Text = "Initialised";
-                    SpatialGame f2 = new SpatialGame(txtTest.Text, Int32.Parse(txtGrid.Text), Int32.Parse(txtCoop.Text), Int32.Parse(txtDefect.Text), Int32.Parse(txtTitForTat.Text), radioStrategy);
+                    SpatialGame f2 = new SpatialGame(Int32.Parse(txtGameLength.Text), Int32.Parse(txtGrid.Text), Int32.Parse(txtCoop.Text), Int32.Parse(txtDefect.Text), Int32.Parse(txtTitForTat.Text), radioStrategy);
                     f2.ShowDialog();
                 }
                 else

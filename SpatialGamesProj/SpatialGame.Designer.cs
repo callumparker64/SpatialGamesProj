@@ -29,6 +29,7 @@ namespace SpatialGamesProj
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTest2 = new System.Windows.Forms.Label();
             this.btnGraph = new System.Windows.Forms.Button();
             this.lblRounds = new System.Windows.Forms.Label();
@@ -38,6 +39,10 @@ namespace SpatialGamesProj
             this.lblTitForTat = new System.Windows.Forms.Label();
             this.lblArrange = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnTwoX = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTest2
@@ -115,7 +120,7 @@ namespace SpatialGamesProj
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(713, 386);
+            this.btnStart.Location = new System.Drawing.Point(713, 357);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 8;
@@ -123,11 +128,48 @@ namespace SpatialGamesProj
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(713, 386);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 9;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnTwoX
+            // 
+            this.btnTwoX.Location = new System.Drawing.Point(696, 30);
+            this.btnTwoX.Name = "btnTwoX";
+            this.btnTwoX.Size = new System.Drawing.Size(43, 23);
+            this.btnTwoX.TabIndex = 10;
+            this.btnTwoX.Text = ">>";
+            this.btnTwoX.UseVisualStyleBackColor = true;
+            this.btnTwoX.Click += new System.EventHandler(this.btnTwoX_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(745, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(43, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = ">>>";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // SpatialGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnTwoX);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblArrange);
             this.Controls.Add(this.lblTitForTat);
@@ -158,5 +200,9 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblArrange;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnTwoX;
+        private System.Windows.Forms.Button button2;
     }
 }

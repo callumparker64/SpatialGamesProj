@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpatialGames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,8 @@ namespace SpatialGamesProj
 {
     public partial class SpatialGame : Form
     {
-        public int gridSize { get; set; }
+        public int gameLen { get; }
+        public int gridSize { get; }
         public int coopNo { get; set; }
         public int defNo { get; set; }
         public int titfortatNo { get; set; }
@@ -18,18 +20,19 @@ namespace SpatialGamesProj
         int rounds = 0;
         List<String> playerStrategies = new List<String>();
 
-        public SpatialGame(string testStr,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
+        public SpatialGame(int gameLen,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
         {
            
             InitializeComponent();
 
-            lblTest2.Text = testStr;
+            lblTest2.Text = gameLen.ToString();
             lblGrid.Text = gridSize.ToString();
             lblCoop.Text = coopNo.ToString();
             lblDefect.Text = defNo.ToString();
             lblTitForTat.Text = titfortatNo.ToString();
             lblArrange.Text = stratArrange;
 
+            this.gameLen = gameLen;
             this.gridSize = gridSize;
             this.coopNo = coopNo;
             this.defNo = defNo;
@@ -133,7 +136,7 @@ namespace SpatialGamesProj
             {
                 for(int j = 0;j<gridSize;j++)
                 {
-                    Label l = addPlayer(num,xPos,yPos, playerStrategies[num]);
+                    Label l = addPlayer(num,xPos,yPos, playerStrategies[num],i,j);
                     this.Controls.Add(l);
                     num = num + 1;
                     yPos = yPos + 40;
@@ -142,26 +145,16 @@ namespace SpatialGamesProj
                 xPos = xPos + 100;
             }
 
-            //for (int i = 0; i < 9; i++)
-            //{
-             //   for (int j = 0; j < 9; j++)
-              //  {
-              //      Label l = addPlayer(num);
-             //       flowLayoutPanel1.Controls.Add(l);
-             //       num = num + 1;
-             //   }
-            //
-            //}
-
 
 
         }
 
-        Label addPlayer(int i, int x, int y, String playerStrategy)
+        Label addPlayer(int i, int x, int y, String playerStrategy,int xPos,int yPos)
         {
             //PlayerStrategy is used to is a case/if to decide which class to call when generating a player object
             if (playerStrategy.Equals("C"))
             {
+                Cooperator c = new Cooperator(xPos, yPos, 0); //Player strategies must be collected into a list of strategies that can be looped through for the main method
                 Label l = new Label();
                 l.Name = "lblCoop" + i.ToString();
                 l.Text = "Coop" + i.ToString();
@@ -171,6 +164,7 @@ namespace SpatialGamesProj
             }
             else if (playerStrategy.Equals("D"))
             {
+                Defector d = new Defector(xPos, yPos, 0);
                 Label l = new Label();
                 l.Name = "lblDefect" + i.ToString();
                 l.Text = "Defect" + i.ToString();
@@ -180,6 +174,7 @@ namespace SpatialGamesProj
             }
             else if (playerStrategy.Equals("T"))
             {
+                TitForTat t = new TitForTat(xPos, yPos, 0);
                 Label l = new Label();
                 l.Name = "lblTitforTat" + i.ToString();
                 l.Text = "TitforTat" + i.ToString();
@@ -198,7 +193,7 @@ namespace SpatialGamesProj
             }
 
         }
-            
+
 
         private void btnGraph_Click(object sender, EventArgs e)
         {
@@ -206,55 +201,49 @@ namespace SpatialGamesProj
             g1.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
+        private void timer1_Tick(object Sender, EventArgs e)
+        {
+
+            for (int i = 0; i < gridSize; i++)
+            {
+                for (int j = 0; j < gridSize; j++)
+                {
+                    //Seperate adjacency method is called on a array of the player objects and points are assigned based on adjacent player
+                }
+
+            }
+            // Game is stopped after reaching round limit
+            if(rounds == gameLen)
+            {
+                timer1.Enabled = false;
+            }
+            else
+            {
+                rounds = rounds + 1;
+                lblRounds.Text = "Round: " + (rounds).ToString();
+            }
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnTwoX_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
+            timer1.Interval = 500;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            rounds = rounds + 1;
-            lblRounds.Text = "Round: " +(rounds).ToString();
+            timer1.Interval = 333;
         }
     }
 }

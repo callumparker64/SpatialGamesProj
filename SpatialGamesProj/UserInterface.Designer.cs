@@ -45,7 +45,8 @@ namespace SpatialGamesProj
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblInit = new System.Windows.Forms.Label();
-            this.txtTest = new System.Windows.Forms.TextBox();
+            this.txtGameLength = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnInit
@@ -197,19 +198,29 @@ namespace SpatialGamesProj
             this.lblInit.TabIndex = 22;
             this.lblInit.Text = "label5";
             // 
-            // txtTest
+            // txtGameLength
             // 
-            this.txtTest.Location = new System.Drawing.Point(621, 335);
-            this.txtTest.Name = "txtTest";
-            this.txtTest.Size = new System.Drawing.Size(100, 23);
-            this.txtTest.TabIndex = 23;
+            this.txtGameLength.Location = new System.Drawing.Point(119, 77);
+            this.txtGameLength.Name = "txtGameLength";
+            this.txtGameLength.Size = new System.Drawing.Size(100, 23);
+            this.txtGameLength.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Game length";
             // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtTest);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtGameLength);
             this.Controls.Add(this.lblInit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -251,7 +262,8 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblInit;
-        private System.Windows.Forms.TextBox txtTest;
+        private System.Windows.Forms.TextBox txtGameLength;
+        private System.Windows.Forms.Label label5;
     }
 }
 

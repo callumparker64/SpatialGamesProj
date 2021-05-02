@@ -215,16 +215,7 @@ namespace SpatialGamesProj
 
         private void timer1_Tick(object Sender, EventArgs e)
         {
-            playerList.ForEach(Player => Player.Score = Player.Score + 1);
-            lbltestScore.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
-            for (int i = 0; i < gridSize; i++)
-            {
-                for (int j = 0; j < gridSize; j++)
-                {
-                    //Seperate adjacency method is called on a array of the player objects and points are assigned based on adjacent player
-                }
 
-            }
             // Game is stopped after reaching round limit
             if(rounds == gameLen)
             {
@@ -234,6 +225,17 @@ namespace SpatialGamesProj
             {
                 rounds = rounds + 1;
                 lblRounds.Text = "Round: " + (rounds).ToString();
+            }
+
+            playerList.ForEach(Player => Player.Score = Player.Score + 1);
+            lbltestScore.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
+            for (int i = 0; i < gridSize; i++)
+            {
+                for (int j = 0; j < gridSize; j++)
+                {
+                    //Seperate adjacency method is called on a array of the player objects and points are assigned based on adjacent player
+                }
+
             }
 
         }

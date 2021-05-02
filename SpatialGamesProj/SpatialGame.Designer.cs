@@ -49,7 +49,7 @@ namespace SpatialGamesProj
             // lblTest2
             // 
             this.lblTest2.AutoSize = true;
-            this.lblTest2.Location = new System.Drawing.Point(144, 419);
+            this.lblTest2.Location = new System.Drawing.Point(155, 445);
             this.lblTest2.Name = "lblTest2";
             this.lblTest2.Size = new System.Drawing.Size(38, 15);
             this.lblTest2.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace SpatialGamesProj
             // 
             // btnGraph
             // 
-            this.btnGraph.Location = new System.Drawing.Point(713, 415);
+            this.btnGraph.Location = new System.Drawing.Point(813, 445);
             this.btnGraph.Name = "btnGraph";
             this.btnGraph.Size = new System.Drawing.Size(75, 23);
             this.btnGraph.TabIndex = 1;
@@ -68,7 +68,7 @@ namespace SpatialGamesProj
             // lblRounds
             // 
             this.lblRounds.AutoSize = true;
-            this.lblRounds.Location = new System.Drawing.Point(724, 12);
+            this.lblRounds.Location = new System.Drawing.Point(824, 9);
             this.lblRounds.Name = "lblRounds";
             this.lblRounds.Size = new System.Drawing.Size(54, 15);
             this.lblRounds.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace SpatialGamesProj
             // lblGrid
             // 
             this.lblGrid.AutoSize = true;
-            this.lblGrid.Location = new System.Drawing.Point(266, 419);
+            this.lblGrid.Location = new System.Drawing.Point(277, 445);
             this.lblGrid.Name = "lblGrid";
             this.lblGrid.Size = new System.Drawing.Size(38, 15);
             this.lblGrid.TabIndex = 3;
@@ -86,7 +86,7 @@ namespace SpatialGamesProj
             // lblCoop
             // 
             this.lblCoop.AutoSize = true;
-            this.lblCoop.Location = new System.Drawing.Point(318, 419);
+            this.lblCoop.Location = new System.Drawing.Point(329, 445);
             this.lblCoop.Name = "lblCoop";
             this.lblCoop.Size = new System.Drawing.Size(38, 15);
             this.lblCoop.TabIndex = 4;
@@ -95,7 +95,7 @@ namespace SpatialGamesProj
             // lblDefect
             // 
             this.lblDefect.AutoSize = true;
-            this.lblDefect.Location = new System.Drawing.Point(372, 419);
+            this.lblDefect.Location = new System.Drawing.Point(383, 445);
             this.lblDefect.Name = "lblDefect";
             this.lblDefect.Size = new System.Drawing.Size(38, 15);
             this.lblDefect.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace SpatialGamesProj
             // lblTitForTat
             // 
             this.lblTitForTat.AutoSize = true;
-            this.lblTitForTat.Location = new System.Drawing.Point(427, 419);
+            this.lblTitForTat.Location = new System.Drawing.Point(438, 445);
             this.lblTitForTat.Name = "lblTitForTat";
             this.lblTitForTat.Size = new System.Drawing.Size(38, 15);
             this.lblTitForTat.TabIndex = 6;
@@ -113,7 +113,7 @@ namespace SpatialGamesProj
             // lblArrange
             // 
             this.lblArrange.AutoSize = true;
-            this.lblArrange.Location = new System.Drawing.Point(484, 419);
+            this.lblArrange.Location = new System.Drawing.Point(495, 445);
             this.lblArrange.Name = "lblArrange";
             this.lblArrange.Size = new System.Drawing.Size(38, 15);
             this.lblArrange.TabIndex = 7;
@@ -121,7 +121,7 @@ namespace SpatialGamesProj
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(713, 357);
+            this.btnStart.Location = new System.Drawing.Point(813, 387);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 8;
@@ -131,7 +131,7 @@ namespace SpatialGamesProj
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(713, 386);
+            this.btnStop.Location = new System.Drawing.Point(813, 416);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 9;
@@ -145,7 +145,7 @@ namespace SpatialGamesProj
             // 
             // btnTwoX
             // 
-            this.btnTwoX.Location = new System.Drawing.Point(696, 30);
+            this.btnTwoX.Location = new System.Drawing.Point(796, 27);
             this.btnTwoX.Name = "btnTwoX";
             this.btnTwoX.Size = new System.Drawing.Size(43, 23);
             this.btnTwoX.TabIndex = 10;
@@ -155,7 +155,7 @@ namespace SpatialGamesProj
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(745, 30);
+            this.button2.Location = new System.Drawing.Point(845, 27);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(43, 23);
             this.button2.TabIndex = 11;
@@ -166,7 +166,7 @@ namespace SpatialGamesProj
             // lbltestScore
             // 
             this.lbltestScore.AutoSize = true;
-            this.lbltestScore.Location = new System.Drawing.Point(724, 82);
+            this.lbltestScore.Location = new System.Drawing.Point(824, 79);
             this.lbltestScore.Name = "lbltestScore";
             this.lbltestScore.Size = new System.Drawing.Size(38, 15);
             this.lbltestScore.TabIndex = 12;
@@ -176,7 +176,7 @@ namespace SpatialGamesProj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 480);
             this.Controls.Add(this.lbltestScore);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnTwoX);
@@ -202,13 +202,11 @@ namespace SpatialGamesProj
 
         private System.Windows.Forms.Label lblTest2;
         private System.Windows.Forms.Button btnGraph;
-        private System.Windows.Forms.Label lblTest;
         private System.Windows.Forms.Label lblRounds;
         private System.Windows.Forms.Label lblGrid;
         private System.Windows.Forms.Label lblCoop;
         private System.Windows.Forms.Label lblDefect;
         private System.Windows.Forms.Label lblTitForTat;
-        private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblArrange;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;

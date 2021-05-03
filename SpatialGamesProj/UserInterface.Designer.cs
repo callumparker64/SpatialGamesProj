@@ -47,6 +47,7 @@ namespace SpatialGamesProj
             this.lblInit = new System.Windows.Forms.Label();
             this.txtGameLength = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.radioRBlock = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnInit
@@ -104,7 +105,7 @@ namespace SpatialGamesProj
             this.StrategyArrangements.ItemHeight = 15;
             this.StrategyArrangements.Location = new System.Drawing.Point(353, 48);
             this.StrategyArrangements.Name = "StrategyArrangements";
-            this.StrategyArrangements.Size = new System.Drawing.Size(324, 139);
+            this.StrategyArrangements.Size = new System.Drawing.Size(393, 154);
             this.StrategyArrangements.TabIndex = 13;
             this.StrategyArrangements.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
@@ -129,11 +130,12 @@ namespace SpatialGamesProj
             this.radioBlock.TabStop = true;
             this.radioBlock.Text = "Block";
             this.radioBlock.UseVisualStyleBackColor = true;
+            this.radioBlock.CheckedChanged += new System.EventHandler(this.radioBlock_CheckedChanged);
             // 
             // radioRows
             // 
             this.radioRows.AutoSize = true;
-            this.radioRows.Location = new System.Drawing.Point(369, 120);
+            this.radioRows.Location = new System.Drawing.Point(369, 145);
             this.radioRows.Name = "radioRows";
             this.radioRows.Size = new System.Drawing.Size(53, 19);
             this.radioRows.TabIndex = 16;
@@ -144,7 +146,7 @@ namespace SpatialGamesProj
             // radioRandom
             // 
             this.radioRandom.AutoSize = true;
-            this.radioRandom.Location = new System.Drawing.Point(369, 145);
+            this.radioRandom.Location = new System.Drawing.Point(369, 170);
             this.radioRandom.Name = "radioRandom";
             this.radioRandom.Size = new System.Drawing.Size(70, 19);
             this.radioRandom.TabIndex = 17;
@@ -214,11 +216,23 @@ namespace SpatialGamesProj
             this.label5.TabIndex = 24;
             this.label5.Text = "Game length";
             // 
+            // radioRBlock
+            // 
+            this.radioRBlock.AutoSize = true;
+            this.radioRBlock.Location = new System.Drawing.Point(369, 120);
+            this.radioRBlock.Name = "radioRBlock";
+            this.radioRBlock.Size = new System.Drawing.Size(97, 19);
+            this.radioRBlock.TabIndex = 25;
+            this.radioRBlock.TabStop = true;
+            this.radioRBlock.Text = "Reverse Block";
+            this.radioRBlock.UseVisualStyleBackColor = true;
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radioRBlock);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtGameLength);
             this.Controls.Add(this.lblInit);
@@ -264,6 +278,8 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Label lblInit;
         private System.Windows.Forms.TextBox txtGameLength;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioRBlock;
     }
 }
 

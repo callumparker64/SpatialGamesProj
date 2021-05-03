@@ -74,17 +74,37 @@ namespace SpatialGamesProj
             {
                 for (int i = 0; i < (coopNo + defNo + titfortatNo); i++)
                 {
-                    if(i < coopNo)
+                    if (i < coopNo)
                     {
-                         playerStrategies.Add("C");
+                        playerStrategies.Add("C");
                     }
-                    else if(i - coopNo < defNo)
+                    else if (i - coopNo < defNo)
                     {
-                         playerStrategies.Add("D");
+                        playerStrategies.Add("D");
                     }
-                    else if(i - (coopNo + defNo) < titfortatNo)
+                    else if (i - (coopNo + defNo) < titfortatNo)
                     {
-                         playerStrategies.Add("T");
+                        playerStrategies.Add("T");
+                    }
+
+                }
+
+            }
+            else if (stratArrange.Equals("RBlock"))
+            {
+                for (int i = (coopNo + defNo + titfortatNo) - 1; i >= 0; i--)
+                {
+                    if (i < coopNo)
+                    {
+                        playerStrategies.Add("C");
+                    }
+                    else if (i - coopNo < defNo)
+                    {
+                        playerStrategies.Add("D");
+                    }
+                    else if (i - (coopNo + defNo) < titfortatNo)
+                    {
+                        playerStrategies.Add("T");
                     }
 
                 }
@@ -111,19 +131,31 @@ namespace SpatialGamesProj
             }
             else if (stratArrange.Equals("Random"))
             {
-                for (int i = 0; i < (coopNo + defNo + titfortatNo); i++)
+                int sumC = 0;
+                int sumD = 0;
+                int sumT = 0;
+                for (int i = 0; (sumC + sumD + sumT) < (coopNo + defNo + titfortatNo); i++)
                 {
-                    if (i < coopNo)
+                    Random rnd = new Random();
+                    int rndInt = rnd.Next(3);
+
+                    if (rndInt == 0 & sumC < coopNo)
                     {
+                        sumC = sumC + 1;
                         playerStrategies.Add("C");
+
                     }
-                    else if (i - coopNo < defNo)
+                    else if (rndInt == 1 & sumD < defNo)
                     {
+                        sumD = sumD + 1;
                         playerStrategies.Add("D");
+
                     }
-                    else if (i - (coopNo + defNo) < titfortatNo)
+                    else if (rndInt == 2 & sumT < titfortatNo)
                     {
+                        sumT = sumT + 1;
                         playerStrategies.Add("T");
+
                     }
 
                 }
@@ -227,10 +259,10 @@ namespace SpatialGamesProj
                 lblRounds.Text = "Round: " + (rounds).ToString();
             }
 
-            playerList.ForEach(Player => Player.Adjacency(playerList,gridSize));
+            playerList.ForEach(Player => Player.Adjacency(playerList, gridSize));
             lbltestScore.Text = playerList.Find(Player => Player.xCoor == 0 & Player.yCoor == 0).Score.ToString();
             lbltestScore2.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
-            lbltestScore2.Text = playerList.Find(Player => Player.xCoor == 2 & Player.yCoor == 2).Score.ToString();
+            lbltestScore3.Text = playerList.Find(Player => Player.xCoor == 2 & Player.yCoor == 2).Score.ToString();
 
         }
 

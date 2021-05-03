@@ -50,6 +50,10 @@ namespace SpatialGamesProj
             {
                 radioStrategy = "Block";
             }
+            else if (radioRBlock.Checked == true)
+            {
+                radioStrategy = "RBlock";
+            }
             else if (radioRows.Checked == true)
             {
                 radioStrategy = "Rows";
@@ -96,6 +100,11 @@ namespace SpatialGamesProj
         }
 
         private void txtGrid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioBlock_CheckedChanged(object sender, EventArgs e)
         {
 
         }

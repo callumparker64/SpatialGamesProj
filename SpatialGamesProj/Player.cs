@@ -57,15 +57,15 @@ namespace SpatialGamesProj
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
-                                Score = Score + 1;
+                                Score = Score + 3;
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                             {
-                                Score = Score - 3;
+                                Score = Score - 1;
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                             {
-                                Score = Score + 1;
+                                Score = Score + 3;
                             }
                         }
                     }

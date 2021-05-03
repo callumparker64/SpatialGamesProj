@@ -227,16 +227,8 @@ namespace SpatialGamesProj
                 lblRounds.Text = "Round: " + (rounds).ToString();
             }
 
-            playerList.ForEach(Player => Player.Score = Player.Score + 1);
-            lbltestScore.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
-            for (int i = 0; i < gridSize; i++)
-            {
-                for (int j = 0; j < gridSize; j++)
-                {
-                    //Seperate adjacency method is called on a array of the player objects and points are assigned based on adjacent player
-                }
-
-            }
+            playerList.ForEach(Player => Player.Adjacency(playerList));
+            lbltestScore.Text = playerList.Find(Player => Player.xCoor == 0 & Player.yCoor == 0).Score.ToString();
 
         }
 

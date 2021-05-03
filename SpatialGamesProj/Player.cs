@@ -19,58 +19,86 @@ namespace SpatialGamesProj
             Score = score;
         }
 
-        public void Adjacency(string adjStrat)
+        public void Adjacency(List<Player> players)
         {
-            if(strategy == "C")
+            if(strategy.Equals("C"))
             {
-                if (adjStrat == "C")
+                for (int i = xCoor - 1; i < xCoor + 1; i++)
                 {
-                    Score = Score + 1;
-                }
-                else if (adjStrat == "D")
-                {
-                    Score = Score - 3;
-                }
-                else if(adjStrat == "T")
-                {
+                    for (int j = yCoor - 1; j < yCoor + 1; j++)
+                    {
+                        if(i >= 0 & j >= 0)
+                        {
+                            if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
+                            {
+                                Score = Score + 1;
+                            }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
+                            {
+                                Score = Score - 3;
+                            }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
+                            {
+                                Score = Score + 1;
+                            }
+                        }
+
+                    }
 
                 }
             }
-            else if (strategy == "D")
+            else if(strategy.Equals("D"))
             {
-                if (adjStrat == "C")
+                for (int i = xCoor - 1; i < xCoor + 1; i++)
                 {
-                    Score = Score + 3;
-                }
-                else if (adjStrat == "D")
-                {
-                    Score = Score - 1;
-                }
-                else if (adjStrat == "T")
-                {
+                    for (int j = yCoor - 1; j < yCoor + 1; j++)
+                    {
+                        if (i >= 0 & j >= 0)
+                        {
+                            if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
+                            {
+                                Score = Score + 1;
+                            }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
+                            {
+                                Score = Score - 3;
+                            }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
+                            {
+                                Score = Score + 1;
+                            }
+                        }
+                    }
 
                 }
             }
-            else if (strategy == "T")
+            else if(strategy == "T")
             {
-                if (adjStrat == "C")
+                for (int i = xCoor - 1; i < xCoor + 1; i++)
                 {
-                    Score = Score + 1;
-                }
-                else if (adjStrat == "D")
-                {
-                    Score = Score - 3;
-                }
-                else if (adjStrat == "T")
-                {
+                    for (int j = yCoor - 1; j < yCoor + 1; j++)
+                    {
+                        if (i >= 0 & j >= 0)
+                        {
+                            if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
+                            {
+                                Score = Score + 1;
+                            }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
+                            {
+                                Score = Score - 3;
+                            }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
+                            {
+                                Score = Score + 1;
+                            }
+                        }
+                    }
 
                 }
             }
-
 
         }
-
-
 
     }
 }

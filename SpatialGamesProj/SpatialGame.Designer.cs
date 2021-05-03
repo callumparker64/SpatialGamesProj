@@ -44,6 +44,9 @@ namespace SpatialGamesProj
             this.btnTwoX = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lbltestScore = new System.Windows.Forms.Label();
+            this.lbltestScore2 = new System.Windows.Forms.Label();
+            this.lbltestScore3 = new System.Windows.Forms.Label();
+            this.btnTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTest2
@@ -166,17 +169,49 @@ namespace SpatialGamesProj
             // lbltestScore
             // 
             this.lbltestScore.AutoSize = true;
-            this.lbltestScore.Location = new System.Drawing.Point(824, 79);
+            this.lbltestScore.Location = new System.Drawing.Point(824, 81);
             this.lbltestScore.Name = "lbltestScore";
             this.lbltestScore.Size = new System.Drawing.Size(38, 15);
             this.lbltestScore.TabIndex = 12;
             this.lbltestScore.Text = "label1";
+            // 
+            // lbltestScore2
+            // 
+            this.lbltestScore2.AutoSize = true;
+            this.lbltestScore2.Location = new System.Drawing.Point(824, 109);
+            this.lbltestScore2.Name = "lbltestScore2";
+            this.lbltestScore2.Size = new System.Drawing.Size(38, 15);
+            this.lbltestScore2.TabIndex = 13;
+            this.lbltestScore2.Text = "label1";
+            this.lbltestScore2.Click += new System.EventHandler(this.lbltestScore2_Click);
+            // 
+            // lbltestScore3
+            // 
+            this.lbltestScore3.AutoSize = true;
+            this.lbltestScore3.Location = new System.Drawing.Point(824, 137);
+            this.lbltestScore3.Name = "lbltestScore3";
+            this.lbltestScore3.Size = new System.Drawing.Size(38, 15);
+            this.lbltestScore3.TabIndex = 14;
+            this.lbltestScore3.Text = "label1";
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(813, 325);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.TabIndex = 15;
+            this.btnTest.Text = "Test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // SpatialGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 480);
+            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.lbltestScore3);
+            this.Controls.Add(this.lbltestScore2);
             this.Controls.Add(this.lbltestScore);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnTwoX);
@@ -214,5 +249,8 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Button btnTwoX;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbltestScore;
+        private System.Windows.Forms.Label lbltestScore2;
+        private System.Windows.Forms.Label lbltestScore3;
+        private System.Windows.Forms.Button btnTest;
     }
 }

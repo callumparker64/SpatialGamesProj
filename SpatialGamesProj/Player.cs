@@ -11,23 +11,23 @@ namespace SpatialGamesProj
         public int yCoor { get; set; }
         public int Score { get; set; }
 
-        public Player(string strategy,int x, int y, int score)
+        public Player(string playerStrat,int x, int y, int score)
         {
-            this.strategy = strategy;
+            strategy = playerStrat;
             xCoor = x;
             yCoor = y;
             Score = score;
         }
 
-        public void Adjacency(List<Player> players)
+        public void Adjacency(List<Player> players,int gridSize)
         {
             if(strategy.Equals("C"))
             {
-                for (int i = xCoor - 1; i < xCoor + 1; i++)
+                for (int i = xCoor - 1; i <= xCoor + 1; i++)
                 {
-                    for (int j = yCoor - 1; j < yCoor + 1; j++)
+                    for (int j = yCoor - 1; j <= yCoor + 1; j++)
                     {
-                        if(i >= 0 & j >= 0)
+                        if(i >= 0 & j >= 0 & i<gridSize & j<gridSize & !(i == xCoor & j == yCoor))
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
@@ -49,11 +49,11 @@ namespace SpatialGamesProj
             }
             else if(strategy.Equals("D"))
             {
-                for (int i = xCoor - 1; i < xCoor + 1; i++)
+                for (int i = xCoor - 1; i <= xCoor + 1; i++)
                 {
-                    for (int j = yCoor - 1; j < yCoor + 1; j++)
+                    for (int j = yCoor - 1; j <= yCoor + 1; j++)
                     {
-                        if (i >= 0 & j >= 0)
+                        if(i >= 0 & j >= 0 & i < gridSize & j < gridSize & !(i == xCoor & j == yCoor))
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
@@ -74,11 +74,11 @@ namespace SpatialGamesProj
             }
             else if(strategy == "T")
             {
-                for (int i = xCoor - 1; i < xCoor + 1; i++)
+                for (int i = xCoor - 1; i <= xCoor + 1; i++)
                 {
-                    for (int j = yCoor - 1; j < yCoor + 1; j++)
+                    for (int j = yCoor - 1; j <= yCoor + 1; j++)
                     {
-                        if (i >= 0 & j >= 0)
+                        if(i >= 0 & j >= 0 & i < gridSize & j < gridSize & !(i == xCoor & j == yCoor))
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {

@@ -227,8 +227,10 @@ namespace SpatialGamesProj
                 lblRounds.Text = "Round: " + (rounds).ToString();
             }
 
-            playerList.ForEach(Player => Player.Adjacency(playerList));
+            playerList.ForEach(Player => Player.Adjacency(playerList,gridSize));
             lbltestScore.Text = playerList.Find(Player => Player.xCoor == 0 & Player.yCoor == 0).Score.ToString();
+            lbltestScore2.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
+            lbltestScore2.Text = playerList.Find(Player => Player.xCoor == 2 & Player.yCoor == 2).Score.ToString();
 
         }
 
@@ -240,6 +242,19 @@ namespace SpatialGamesProj
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Interval = 333;
+        }
+
+        private void lbltestScore2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            playerList.ForEach(Player => Player.Adjacency(playerList,gridSize));
+            lbltestScore.Text = playerList.Find(Player => Player.xCoor == 0 & Player.yCoor == 0).Score.ToString();
+            lbltestScore2.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
+            lbltestScore3.Text = playerList.Find(Player => Player.xCoor == 2 & Player.yCoor == 2).Score.ToString();
         }
     }
 }

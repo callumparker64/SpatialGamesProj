@@ -10,6 +10,7 @@ namespace SpatialGamesProj
         public int xCoor { get; set; }
         public int yCoor { get; set; }
         public int Score { get; set; }
+        public List<int> scores = new List<int>();
 
         public Player(string playerStrat, int x, int y, int score)
         {
@@ -31,11 +32,13 @@ namespace SpatialGamesProj
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
-                                Score = Score + 1;
+                                Score = Score + 2;
+                                scores.Add(Score);
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                             {
-                                Score = Score - 3;
+                                Score = Score - 4;
+                                scores.Add(Score);
                                 if (Score < -10)
                                 {
                                     strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
@@ -43,7 +46,8 @@ namespace SpatialGamesProj
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                             {
-                                Score = Score + 1;
+                                Score = Score + 2;
+                                scores.Add(Score);
                             }
                         }
 
@@ -61,11 +65,13 @@ namespace SpatialGamesProj
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
-                                Score = Score + 3;
+                                Score = Score + 4;
+                                scores.Add(Score);
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                             {
                                 Score = Score - 1;
+                                scores.Add(Score);
                                 if (Score < -10)
                                 {
                                     strategy = "C";
@@ -74,6 +80,7 @@ namespace SpatialGamesProj
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T") & players.Find(Player => Player.xCoor == i & Player.yCoor == j).Score < 3)
                             {
                                 Score = Score - 1;
+                                scores.Add(Score);
                                 if (Score < -10)
                                 {
                                     strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
@@ -81,7 +88,8 @@ namespace SpatialGamesProj
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                             {
-                                Score = Score + 3;
+                                Score = Score + 4;
+                                scores.Add(Score);
                             }
                         }
 
@@ -98,11 +106,13 @@ namespace SpatialGamesProj
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
-                                Score = Score + 1;
+                                Score = Score + 2;
+                                scores.Add(Score);
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D") & Score < 3)
                             {
                                 Score = Score - 1;
+                                scores.Add(Score);
                                 if (Score < -10)
                                 {
                                     strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
@@ -110,7 +120,8 @@ namespace SpatialGamesProj
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                             {
-                                Score = Score - 3;
+                                Score = Score - 4;
+                                scores.Add(Score);
                                 if (Score < -10)
                                 {
                                     strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
@@ -118,7 +129,8 @@ namespace SpatialGamesProj
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                             {
-                                Score = Score + 1;
+                                Score = Score + 2;
+                                scores.Add(Score);
                             }
                         }
                     }

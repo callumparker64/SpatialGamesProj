@@ -46,7 +46,6 @@ namespace SpatialGamesProj
             this.lbltestScore = new System.Windows.Forms.Label();
             this.lbltestScore2 = new System.Windows.Forms.Label();
             this.lbltestScore3 = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
             this.lblTest = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -195,16 +194,6 @@ namespace SpatialGamesProj
             this.lbltestScore3.TabIndex = 14;
             this.lbltestScore3.Text = "label1";
             // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(813, 325);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTest.TabIndex = 15;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
             // lblTest
             // 
             this.lblTest.AutoSize = true;
@@ -220,7 +209,6 @@ namespace SpatialGamesProj
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 480);
             this.Controls.Add(this.lblTest);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lbltestScore3);
             this.Controls.Add(this.lbltestScore2);
             this.Controls.Add(this.lbltestScore);
@@ -262,7 +250,6 @@ namespace SpatialGamesProj
         private System.Windows.Forms.Label lbltestScore;
         private System.Windows.Forms.Label lbltestScore2;
         private System.Windows.Forms.Label lbltestScore3;
-        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Label lblTest;
     }
 }

@@ -58,7 +58,7 @@ namespace SpatialGamesProj
             // lblGraphY
             // 
             this.lblGraphY.AutoSize = true;
-            this.lblGraphY.Location = new System.Drawing.Point(76, 395);
+            this.lblGraphY.Location = new System.Drawing.Point(76, 214);
             this.lblGraphY.Name = "lblGraphY";
             this.lblGraphY.Size = new System.Drawing.Size(38, 15);
             this.lblGraphY.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace SpatialGamesProj
             this.btnGraphTest.Name = "btnGraphTest";
             this.btnGraphTest.Size = new System.Drawing.Size(75, 23);
             this.btnGraphTest.TabIndex = 4;
-            this.btnGraphTest.Text = "Test";
+            this.btnGraphTest.Text = "Graph";
             this.btnGraphTest.UseVisualStyleBackColor = true;
             this.btnGraphTest.Click += new System.EventHandler(this.btnGraphTest_Click);
             // 

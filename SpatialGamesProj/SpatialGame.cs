@@ -20,7 +20,6 @@ namespace SpatialGamesProj
         int rounds = 0;
         List<String> playerStrategies = new List<String>();
         List<Player> playerList = new List<Player>();
-        //List<Scores> scoreList = new List<Score>();
 
         public SpatialGame(int gameLen,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
         {
@@ -230,7 +229,7 @@ namespace SpatialGamesProj
 
         private void btnGraph_Click(object sender, EventArgs e)
         {
-            Graphs g1 = new Graphs(rounds);
+            Graphs g1 = new Graphs(rounds,playerList);
             g1.Show();
         }
 
@@ -270,18 +269,29 @@ namespace SpatialGamesProj
                 {
                     if (playerList.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                     {
-                        if(this.Controls.ContainsKey("lblDefect"+i))
+                        //Testing method to check if the players do change strategy based on situation
+                        if (this.Controls.ContainsKey("lblDefect"+i))
                         {
-                            lblTest.Text = "Test";
+                            lblTest.Text = "Defect > Coop";
                         }
                     }
                     else if (playerList.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                     {
-
+                        if (this.Controls.ContainsKey("lblCoop" + i))
+                        {
+                            lblTest.Text = "Coop > Defect";
+                        }
+                        if (this.Controls.ContainsKey("lblTitforTat" + i))
+                        {
+                            lblTest.Text = "TitforTat > Defect";
+                        }
                     }
                     else if (playerList.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                     {
-
+                        if (this.Controls.ContainsKey("lblCoop" + i))
+                        {
+                            lblTest.Text = "Coop > Defect";
+                        }
                     }
                     checkNum = checkNum + 1;
                 }

@@ -6,17 +6,21 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
+using SpatialGames;
 
 namespace SpatialGamesProj
 {
     public partial class Graphs : Form
     {
         public int rounds { get; }
+        List<Player> playerList = new List<Player>();
 
-        public Graphs(int rounds)
+        //Using the rounds as the x axis and the scores array found in the player list as a y axis to map the points on the graph
+        public Graphs(int rounds,List<Player> players)
         {
-            this.rounds = rounds;
             InitializeComponent();
+            this.rounds = rounds;
+            this.playerList = players;
         }
 
         private void Graphs_Load(object sender, EventArgs e)
@@ -43,8 +47,8 @@ namespace SpatialGamesProj
         {
             // The bounds to draw.
             float xmin = 0;
-            float xmax = 3;
-            float ymin = 0;
+            float xmax = rounds;
+            float ymin = -3;
             float ymax = 3;
 
             // Make the Bitmap.
@@ -66,10 +70,9 @@ namespace SpatialGamesProj
                 };
                 gr.Transform = new Matrix(rect, pts);
 
-                // Draw the graph.
                 using (Pen graph_pen = new Pen(Color.Blue, 0))
                 {
-                    // Draw the axes.
+                    //method to draw the axis
                     gr.DrawLine(graph_pen, xmin, 0, xmax, 0);
                     gr.DrawLine(graph_pen, 0, ymin, 0, ymax);
                     for (int x = (int)xmin; x <= xmax; x++)
@@ -81,69 +84,11 @@ namespace SpatialGamesProj
                         gr.DrawLine(graph_pen, -0.1f, y, 0.1f, y);
                     }
                     graph_pen.Color = Color.Red;
-
-
-
-
+                    //Take the points from the scores array and the max point from the rounds to plot the points to be drawn
                 }
             }
-
-            // Display the result.
             picGraph.Image = bm;
         }
 
     }
 }
-
-
-//// See how big 1 pixel is horizontally.
-//Matrix inverse = gr.Transform;
-//inverse.Invert();
-//PointF[] pixel_pts =
-//{
-//                        new PointF(0, 0),
-//                        new PointF(1, 0)
-//                    };
-//inverse.TransformPoints(pixel_pts);
-//float dx = pixel_pts[1].X - pixel_pts[0].X;
-//dx /= 2;
-
-//// Loop over x values to generate points.
-//List<PointF> points = new List<PointF>();
-//for (float x = xmin; x <= xmax; x += dx)
-//{
-//    bool valid_point = false;
-//    try
-//    {
-//        // Get the next point.
-//        float y = F(x);
-
-//        // If the slope is reasonable,
-//        // this is a valid point.
-//        if (points.Count == 0) valid_point = true;
-//        else
-//        {
-//            float dy = y - points[points.Count - 1].Y;
-//            if (Math.Abs(dy / dx) < 1000)
-//                valid_point = true;
-//        }
-//        if (valid_point) points.Add(new PointF(x, y));
-//    }
-//    catch
-//    {
-//    }
-
-//    // If the new point is invalid, draw
-//    // the points in the latest batch.
-//    if (!valid_point)
-//    {
-//        if (points.Count > 1)
-//            gr.DrawLines(graph_pen, points.ToArray());
-//        points.Clear();
-//    }
-
-//}
-
-//// Draw the last batch of points.
-//if (points.Count > 1)
-//    gr.DrawLines(graph_pen, points.ToArray());

@@ -8,6 +8,7 @@ namespace SpatialGames
         public string getValue()
         {
             return this.val;
+
         }
     }
 }

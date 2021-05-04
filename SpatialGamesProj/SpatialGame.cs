@@ -20,6 +20,7 @@ namespace SpatialGamesProj
         int rounds = 0;
         List<String> playerStrategies = new List<String>();
         List<Player> playerList = new List<Player>();
+        //List<Scores> scoreList = new List<Score>();
 
         public SpatialGame(int gameLen,int gridSize,int coopNo,int defNo,int titfortatNo,String stratArrange)
         {
@@ -182,7 +183,7 @@ namespace SpatialGamesProj
 
         }
 
-        Label addPlayer(int i, int x, int y, String playerStrategy,int xPos,int yPos)
+        Label addPlayer(int i, int x, int y, String playerStrategy, int xPos, int yPos)
         {
             //PlayerStrategy is used to is a case/if to decide which class to call when generating a player object
             if (playerStrategy.Equals("C"))
@@ -227,10 +228,9 @@ namespace SpatialGamesProj
 
         }
 
-
         private void btnGraph_Click(object sender, EventArgs e)
         {
-            Graphs g1 = new Graphs();
+            Graphs g1 = new Graphs(rounds);
             g1.Show();
         }
 
@@ -263,6 +263,29 @@ namespace SpatialGamesProj
             lbltestScore.Text = playerList.Find(Player => Player.xCoor == 0 & Player.yCoor == 0).Score.ToString();
             lbltestScore2.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
             lbltestScore3.Text = playerList.Find(Player => Player.xCoor == 2 & Player.yCoor == 2).Score.ToString();
+            int checkNum = 0;
+            for (int i = 0; i < gridSize; i++)
+            {
+                for (int j = 0; j < gridSize; j++)
+                {
+                    if (playerList.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
+                    {
+                        if(this.Controls.ContainsKey("lblDefect"+i))
+                        {
+                            lblTest.Text = "Test";
+                        }
+                    }
+                    else if (playerList.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
+                    {
+
+                    }
+                    else if (playerList.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
+                    {
+
+                    }
+                    checkNum = checkNum + 1;
+                }
+            }
 
         }
 
@@ -287,6 +310,7 @@ namespace SpatialGamesProj
             lbltestScore.Text = playerList.Find(Player => Player.xCoor == 0 & Player.yCoor == 0).Score.ToString();
             lbltestScore2.Text = playerList.Find(Player => Player.xCoor == 1 & Player.yCoor == 1).Score.ToString();
             lbltestScore3.Text = playerList.Find(Player => Player.xCoor == 2 & Player.yCoor == 2).Score.ToString();
+
         }
     }
 }

@@ -11,16 +11,18 @@ namespace SpatialGamesProj
 {
     public partial class Graphs : Form
     {
+        public int rounds { get; }
 
-
-        public Graphs()
+        public Graphs(int rounds)
         {
+            this.rounds = rounds;
             InitializeComponent();
         }
 
         private void Graphs_Load(object sender, EventArgs e)
         {
-
+            lblGraphX.Text = "Rounds";
+            lblGraphY.Text = "Score";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,15 +36,15 @@ namespace SpatialGamesProj
         }
         private float F(float x)
         {
-            return (float)((1 / x + 1 / (x + 1) - 2 * x * x) / 10);
+            return (float)(x);
         }
 
         private void btnGraphTest_Click(object sender, EventArgs e)
         {
             // The bounds to draw.
-            float xmin = -3;
+            float xmin = 0;
             float xmax = 3;
-            float ymin = -3;
+            float ymin = 0;
             float ymax = 3;
 
             // Make the Bitmap.
@@ -80,57 +82,9 @@ namespace SpatialGamesProj
                     }
                     graph_pen.Color = Color.Red;
 
-                    // See how big 1 pixel is horizontally.
-                    Matrix inverse = gr.Transform;
-                    inverse.Invert();
-                    PointF[] pixel_pts =
-                    {
-                new PointF(0, 0),
-                new PointF(1, 0)
-            };
-                    inverse.TransformPoints(pixel_pts);
-                    float dx = pixel_pts[1].X - pixel_pts[0].X;
-                    dx /= 2;
 
-                    // Loop over x values to generate points.
-                    List<PointF> points = new List<PointF>();
-                    for (float x = xmin; x <= xmax; x += dx)
-                    {
-                        bool valid_point = false;
-                        try
-                        {
-                            // Get the next point.
-                            float y = F(x);
 
-                            // If the slope is reasonable,
-                            // this is a valid point.
-                            if (points.Count == 0) valid_point = true;
-                            else
-                            {
-                                float dy = y - points[points.Count - 1].Y;
-                                if (Math.Abs(dy / dx) < 1000)
-                                    valid_point = true;
-                            }
-                            if (valid_point) points.Add(new PointF(x, y));
-                        }
-                        catch
-                        {
-                        }
 
-                        // If the new point is invalid, draw
-                        // the points in the latest batch.
-                        if (!valid_point)
-                        {
-                            if (points.Count > 1)
-                                gr.DrawLines(graph_pen, points.ToArray());
-                            points.Clear();
-                        }
-
-                    }
-
-                    // Draw the last batch of points.
-                    if (points.Count > 1)
-                        gr.DrawLines(graph_pen, points.ToArray());
                 }
             }
 
@@ -140,3 +94,56 @@ namespace SpatialGamesProj
 
     }
 }
+
+
+//// See how big 1 pixel is horizontally.
+//Matrix inverse = gr.Transform;
+//inverse.Invert();
+//PointF[] pixel_pts =
+//{
+//                        new PointF(0, 0),
+//                        new PointF(1, 0)
+//                    };
+//inverse.TransformPoints(pixel_pts);
+//float dx = pixel_pts[1].X - pixel_pts[0].X;
+//dx /= 2;
+
+//// Loop over x values to generate points.
+//List<PointF> points = new List<PointF>();
+//for (float x = xmin; x <= xmax; x += dx)
+//{
+//    bool valid_point = false;
+//    try
+//    {
+//        // Get the next point.
+//        float y = F(x);
+
+//        // If the slope is reasonable,
+//        // this is a valid point.
+//        if (points.Count == 0) valid_point = true;
+//        else
+//        {
+//            float dy = y - points[points.Count - 1].Y;
+//            if (Math.Abs(dy / dx) < 1000)
+//                valid_point = true;
+//        }
+//        if (valid_point) points.Add(new PointF(x, y));
+//    }
+//    catch
+//    {
+//    }
+
+//    // If the new point is invalid, draw
+//    // the points in the latest batch.
+//    if (!valid_point)
+//    {
+//        if (points.Count > 1)
+//            gr.DrawLines(graph_pen, points.ToArray());
+//        points.Clear();
+//    }
+
+//}
+
+//// Draw the last batch of points.
+//if (points.Count > 1)
+//    gr.DrawLines(graph_pen, points.ToArray());

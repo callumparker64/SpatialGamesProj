@@ -11,7 +11,7 @@ namespace SpatialGamesProj
         public int yCoor { get; set; }
         public int Score { get; set; }
 
-        public Player(string playerStrat,int x, int y, int score)
+        public Player(string playerStrat, int x, int y, int score)
         {
             strategy = playerStrat;
             xCoor = x;
@@ -19,15 +19,15 @@ namespace SpatialGamesProj
             Score = score;
         }
 
-        public void Adjacency(List<Player> players,int gridSize)
+        public void Adjacency(List<Player> players, int gridSize)
         {
-            if(strategy.Equals("C"))
+            if (strategy.Equals("C"))
             {
                 for (int i = xCoor - 1; i <= xCoor + 1; i++)
                 {
                     for (int j = yCoor - 1; j <= yCoor + 1; j++)
                     {
-                        if(i >= 0 & j >= 0 & i<gridSize & j<gridSize & !(i == xCoor & j == yCoor))
+                        if (i >= 0 & j >= 0 & i < gridSize & j < gridSize & !(i == xCoor & j == yCoor))
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
@@ -36,6 +36,10 @@ namespace SpatialGamesProj
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                             {
                                 Score = Score - 3;
+                                if (Score < -10)
+                                {
+                                    strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
+                                }
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                             {
@@ -47,13 +51,13 @@ namespace SpatialGamesProj
 
                 }
             }
-            else if(strategy.Equals("D"))
+            else if (strategy.Equals("D"))
             {
                 for (int i = xCoor - 1; i <= xCoor + 1; i++)
                 {
                     for (int j = yCoor - 1; j <= yCoor + 1; j++)
                     {
-                        if(i >= 0 & j >= 0 & i < gridSize & j < gridSize & !(i == xCoor & j == yCoor))
+                        if (i >= 0 & j >= 0 & i < gridSize & j < gridSize & !(i == xCoor & j == yCoor))
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
@@ -62,31 +66,55 @@ namespace SpatialGamesProj
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                             {
                                 Score = Score - 1;
+                                if (Score < -10)
+                                {
+                                    strategy = "C";
+                                }
+                            }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T") & players.Find(Player => Player.xCoor == i & Player.yCoor == j).Score < 3)
+                            {
+                                Score = Score - 1;
+                                if (Score < -10)
+                                {
+                                    strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
+                                }
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                             {
                                 Score = Score + 3;
                             }
                         }
-                    }
 
+                    }
                 }
             }
-            else if(strategy == "T")
+            else if (strategy == "T")
             {
                 for (int i = xCoor - 1; i <= xCoor + 1; i++)
                 {
                     for (int j = yCoor - 1; j <= yCoor + 1; j++)
                     {
-                        if(i >= 0 & j >= 0 & i < gridSize & j < gridSize & !(i == xCoor & j == yCoor))
+                        if (i >= 0 & j >= 0 & i < gridSize & j < gridSize & !(i == xCoor & j == yCoor))
                         {
                             if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("C"))
                             {
                                 Score = Score + 1;
                             }
+                            else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D") & Score < 3)
+                            {
+                                Score = Score - 1;
+                                if (Score < -10)
+                                {
+                                    strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
+                                }
+                            }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("D"))
                             {
                                 Score = Score - 3;
+                                if (Score < -10)
+                                {
+                                    strategy = players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy;
+                                }
                             }
                             else if (players.Find(Player => Player.xCoor == i & Player.yCoor == j).strategy.Equals("T"))
                             {
@@ -98,7 +126,7 @@ namespace SpatialGamesProj
                 }
             }
 
-        }
+            }
 
+        }
     }
-}
